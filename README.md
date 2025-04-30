@@ -1,10 +1,9 @@
 # DSS_Gymnasium
-Welcome to DSS_Gymnasium, a project hub guide designed for assisting users in developing Deep Reinforcement Learning environments for electric power distribution systems research using Python, OpenDSS (DSS), Gymnasium (Gym), and Stable-Baselines3 (SB3). 
+Welcome to DSS_Gymnasium, a project hub guide designed for assisting users in developing Deep Reinforcement Learning (DRL) environments for electric power distribution systems research using Python, OpenDSS (DSS), Gymnasium (Gym), and Stable-Baselines3 (SB3). 
 The foundational framework utilizes OpenDSS, an open-source electric power distribution system simulator distributed by the Electric Power Research Institute [EPRI](https://sourceforge.net/p/electricdss/),
 with the [Python](https://www.python.org/) programming language by way of [OpenDSSDirect](https://dss-extensions.org/OpenDSSDirect.py/#) and [DSS-Python](https://dss-extensions.org/DSS-Python/). OpenDSSDirect.py is a cross-platform Python package which
 implements a "direct" library interface to a unique lower-level [implementation](https://github.com/dss-extensions/dss_capi) that allows users to automate OpenDSS processes using Pythonic functionality and other common packages.
-The RL environment class structure is build through Farma's [Gymnasium](https://gymnasium.farama.org/), which is an updated fork based on the previous version from [OpenAi Gym](https://www.gymlibrary.dev/index.html), but with some improved customization capability.
-For reinforcement learning implementation with neural networks, [Stable-Baselines3](https://stable-baselines3.readthedocs.io/en/master/) provides RL algorithm selection via [PyTorch](https://pytorch.org/) and allows for user model flexibility and design customized to each unique implementation. 
+The RL environment class structure is constructed through Farma's open-source package [Gymnasium](https://gymnasium.farama.org/), which is an updated fork based on the previous version from [OpenAi Gym](https://www.gymlibrary.dev/index.html), but with some improved customization capability.  For reinforcement learning implementation with neural networks, [Stable-Baselines3](https://stable-baselines3.readthedocs.io/en/master/) provides RL algorithm selection via [PyTorch](https://pytorch.org/) and allows for user model flexibility and design customized to each DRL implementation.
 
 ## Motivation
 DSS_Gymnasium is a project hub for developing Reinforcement Learning (RL) and DeepRL environments using OpenDSS and Gymnasium for electric power distribution systems research.
