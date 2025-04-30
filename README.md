@@ -6,6 +6,9 @@ implements a "direct" library interface to a unique lower-level [implementation]
 The RL environment class structure is constructed through Farma's open-source package [Gymnasium](https://gymnasium.farama.org/), which is an updated fork based on the previous version from [OpenAi Gym](https://www.gymlibrary.dev/index.html), but with some improved customization capability.  For reinforcement learning implementation with neural networks, [Stable-Baselines3](https://stable-baselines3.readthedocs.io/en/master/) provides RL algorithm selection via [PyTorch](https://pytorch.org/) and allows for user model flexibility and design customized to each individual user's DRL implementation.
 
 ## Motivation
+The purpose of this instructional repository is to provide a simple resource for both new and experienced Python users involved in electric power distribution systems research to convey the process of learning environment development.
+We understand that in the domain(s) of power distribution systems optimization and control, there exist many different types of operational challenges (state estimation, emergency restoration, voltage regulation, DER control) which require different mathematical formulations spedific to the application(s), which require unique customizations for conversion into learning-based formulations.
+
 This repository is built to provide a standardized framework for building customized learning environments for traditional optimization and control problems which may be converted 
 into Markov Decision Processes (MDPs), and can be solved using model-free RL & DRL algorithms.  This tutorial is built for researchers of all expertise working in RL and power distribution systems,
 and is built on foundational research in power systems at Washington State University in the SCALE Lab (Sustainable Climate-resilient Analytics for Large-scale Energy Systems) research group.  
