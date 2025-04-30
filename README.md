@@ -16,7 +16,7 @@ with the [Python](https://www.python.org/) programming language by way of [OpenD
 implements a "direct" library interface to a unique lower-level [implementation](https://github.com/dss-extensions/dss_capi) that allows users to automate OpenDSS processes using Pythonic functionality and other common packages.
 The RL environment class structure is constructed through Farma's open-source package [Gymnasium](https://gymnasium.farama.org/), which is an updated fork based on the previous version from [OpenAi Gym](https://www.gymlibrary.dev/index.html), but with some improved customization capability.  For reinforcement learning implementation with neural networks, [Stable-Baselines3](https://stable-baselines3.readthedocs.io/en/master/) provides RL algorithm selection via [PyTorch](https://pytorch.org/) and allows for user model flexibility and design customized to each individual user's DRL implementation.
 
-![DSS-Gymnasium-Interface](https://github.com/dgloves/DSS_Gymnasium/blob/main/dss_gymnasium_map.png “DSS-Gymnasium-Framework”)
+![DSS-Gymnasium](<https://github.com/dgloves/DSS_Gymnasium/blob/main/dss_gymnasium_map.png> “DSS-Gymnasium-Framework”)
 
 ## Virtual Environment
 Anaconda 3 distribution using Python ver. 3.10.13 (python 3.10+ applicable)
