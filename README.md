@@ -15,7 +15,7 @@ The RL environment class structure is constructed through Farma's open-source pa
 
 
 
-![DSS-Gymnasium-Map](https://github.com/dgloves/DSS_Gymnasium/blob/main/dss_gymnasium_map.png?raw=True “DSS-Gymnasium-Framework”)
+![DSS-Gymnasium-Map](https://github.com/dgloves/DSS_Gymnasium/blob/main/dss_gymnasium_map.png “DSS-Gymnasium-Framework”)
 
 
 
