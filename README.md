@@ -2,12 +2,12 @@
 Welcome to DSS_Gymnasium, a project hub guide designed for assisting users in developing Deep Reinforcement Learning (DRL) environments for electric power distribution systems research using Python, OpenDSS (DSS), Gymnasium (Gym), and Stable-Baselines3 (SB3).
 
 ## Motivation
-The purpose of this instructional repository is to provide a simple resource for both new and experienced Python users involved in electric power distribution systems research to aid in the process of custom learning environment creation for any optimization-based task which can be solved by machine learning via agent-environment interaction in OpenDSS using DRL algorithms.
-We understand that in the domain(s) of power distribution systems optimization and control, there exist many different types of operational grid challenges (state estimation, emergency restoration, voltage regulation, DER dispatch, etc.), each requiring different mathematical formulations specific to the application.  Furthermore, this translates to unique customizations for problem conversion into learning-based formulations as well as environmental structure.  Therefore, instead of creating a single environment suitable for all problems, we feel it is more important to teach users how to construct their own environment based on his/her own task.  
+The purpose of this repository is to provide a simple resource for both new and experienced Python users involved in electric power distribution systems research to aid in the process of custom learning environment creation for any optimization-based task which can be solved by Deep Reinforcement Learning algorithms with OpenDSS.
+We understand that in the domain(s) of power distribution systems optimization and control, there exist many different types of operational grid challenges (state estimation, emergency restoration, voltage regulation, DER dispatch, etc.), each requiring different mathematical formulations specific to the application.  This translates into unique customizations for problem conversion into learning-based formulations (objective, constraints, etc.) as well as environmental structure (network, device, etc.).  Therefore, instead of attmepting to create a single RL-based learning environment suitable for all problems (this is highly impractical), we feel it is more important to teach users how to construct their own environment using open-source tools based on his/her own task.    
 
-This repository is built to provide a standardized framework for building customized learning environments for traditional optimization and control problems which may be converted 
-into Markov Decision Processes (MDPs), and can be solved using model-free RL & DRL algorithms.  This tutorial is built for researchers of all expertise working in RL and power distribution systems,
-and is built on foundational research in power systems at Washington State University in the SCALE Lab (Sustainable Climate-resilient Analytics for Large-scale Energy Systems) research group.  
+This repository is built to provide an instructional framework for building customized Gymnasium learning environments in OpenDSS for traditional optimization and control problems which may be converted 
+into Markov Decision Processes (MDPs), and can be solved using model-free RL & DRL algorithms.  
+This tutorial is built on foundational research in power systems at Washington State University in the SCALE Lab (Sustainable Climate-resilient Analytics for Large-scale Energy Systems) research group.  
 
 
 ## Toolkit Construction
