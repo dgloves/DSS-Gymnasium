@@ -4,8 +4,8 @@ Welcome to DSS_Gymnasium, a project hub guide designed for assisting users in de
 ## Motivation
 This repository is built to provide an instructional framework for building customized Gymnasium learning environments in OpenDSS for traditional optimization and control problems which may be converted 
 into Markov Decision Processes (MDPs), and can be solved using model-free RL & DRL algorithms. 
-The purpose of this repository is to provide a simple resource for both new and experienced Python users involved in electric power distribution systems research to aid in the process of custom learning environment creation for any optimization-based task which can be solved by Deep Reinforcement Learning algorithms with OpenDSS.
-We understand that in the domain(s) of power distribution systems optimization and control, there exist many different types of operational grid challenges (state estimation, emergency restoration, voltage regulation, DER dispatch, etc.), each requiring different mathematical formulations specific to the application.  This translates into unique customizations for problem conversion into learning-based formulations (objective, constraints, etc.) as well as environmental structure (network, device, etc.).  Therefore, instead of attempting to create a single RL-based learning environment suitable for all problems (this is highly impractical) as many have attempted, we feel it is more important to teach users how to construct their own environment(s) using open-source tools based on his/her own specific grid optimization task.  This tutorial is built on foundational research in power systems at Washington State University in the SCALE Lab (Sustainable Climate-resilient Analytics for Large-scale Energy Systems) research group.  
+The purpose of this repository is to provide a valuable resource for both new and experienced Python users involved in electric power distribution systems research to aid in the process of custom learning environment creation for any optimization-based task which can be solved by Deep Reinforcement Learning algorithms with OpenDSS.
+We understand that in the domain(s) of power distribution systems optimization and control, there exist many different types of operational grid challenges (state estimation, emergency restoration, voltage regulation, DER dispatch, etc.), each requiring mathematical formulations specific to the application.  This translates into unique customizations for problem conversion into learning-based formulations (objective, constraints, etc.) as well as environmental structure (network, device, etc.).  Therefore, instead of attempting to create one single learning environment suitable for all optimization/RL problems (this is highly impractical) as many have attempted, we feel it is more important to teach users how to construct their own environment(s) using open-source tools based on his/her own specific grid optimization task.  This tutorial is built on foundational research in power systems at Washington State University in the SCALE Lab (Sustainable Climate-resilient Analytics for Large-scale Energy Systems) research group.  
 
 ## Toolkit Construction
 The foundational framework utilizes OpenDSS, an open-source electric power distribution system simulator distributed by the Electric Power Research Institute [EPRI](https://sourceforge.net/p/electricdss/),
@@ -18,9 +18,16 @@ The RL environment class structure is constructed through Farma's open-source pa
 ![DSS-Gymnasium-Map](dss_gymnasium_map.png "DSS-Gymnasium Framework")
 
 
-
+# Configuration
 ## Virtual Environment
-Anaconda 3 distribution using Python ver. 3.10.13 (python 3.10+ applicable)
+We recommend users adopt an [Anaconda](https://www.anaconda.com/docs/getting-started/getting-started) distribution using Python ver. 3.10.13 (python 3.10+ applicable) to better manage development of the learning environment within a Conda virtual environment to allow for better package management and flexibility considering multiple projects.  Any common IDE (VSCode, PyCharm, etc.) which can run a Conda virtual environment should work just fine. 
+Once Anaconda has been installed, open your Anaconda cmd propt and create your new virtual environment using:
+
+```python
+conda create -n myenvname python=3.10.13
+```
+
+Further help with installation and environment set up can be found here at [Managing Environments](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)
 
 ## Installation
 Install the following open-source packages using pip or conda:
