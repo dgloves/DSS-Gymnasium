@@ -23,26 +23,24 @@ The RL environment class structure is constructed through Farma's open-source pa
 
 # Configuration
 ## Virtual Environment
-We recommend users adopt an [Anaconda](https://www.anaconda.com/docs/getting-started/getting-started) distribution using Python ver. 3.10.13 (python 3.10+ applicable) to better manage development of the learning environment within a Conda virtual environment to allow for better package management and flexibility considering multiple projects.  Any common IDE (VSCode, PyCharm, etc.) which can run a Conda virtual environment should work just fine. 
+We recommend users adopt an [Anaconda](https://www.anaconda.com/docs/getting-started/getting-started) distribution using Python ver. 3.10.13 (python 3.10+ applicable) to better manage development of the DSS-Gymnasium learning environment within a Conda virtual environment to allow for better package management and flexibility considering multiple projects.  Any common IDE (VSCode, PyCharm, etc.) which can run a Conda virtual environment should work just fine. 
 Once Anaconda has been installed, open your Anaconda cmd propt and create your new virtual environment using:
 
 ```python
 conda create -n myenvname python=3.10.13
 ```
 
-Further help with installation and environment set up can be found here at [Managing Environments](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html)
+Further help with installation and environment set up can be found here at [Managing Environments](https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html).  Make sure to install the latest version of [Pip](https://pypi.org/project/pip/) in your environment as well.  
 
 ## Installation
-Install the following open-source packages using pip or conda:
-* Pytorch: 2.3.0 (CPU) - (GPU requires additional hardware and may be applicable)
-* dss-python: 0.15.7
+Upon environment activation, install the following open-source packages using pip or conda (see links in Toolkit Construction):
 * gymnasium: 0.29.1
-* matplotlib: 3.9.2
-* numpy: 2.1.1
-* opendssdirect-py: 0.9.4 
-* pandas: 2.2.2
-* scipy: 1.14.1
-* stable-baselines 3: 2.3.2
+* opendssdirect-py: 0.9.4 (installs dss-python)
+* Stable-baselines3: 2.3.2
+* Pytorch: 2.3.0 (CPU or GPU) 
+* TensorFlow: 2.19.0 (CPU or GPU) (optional for Tensorboard usage)
+
+Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html),[Numpy](https://numpy.org/install/) 
 
 ## Contributing
 Pull requests are welcome.  For significant changes, please open an issue first to discuss what you would like to change with respect to your particular branch.  This repo is also meant to be forked, allowing users to independently develop their own working environments. 
