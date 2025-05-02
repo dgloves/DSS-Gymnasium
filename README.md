@@ -40,7 +40,7 @@ Upon environment activation, install the following open-source packages using pi
 * Pytorch: 2.3.0 (CPU or GPU) 
 * TensorFlow: 2.19.0 (CPU or GPU) (optional for Tensorboard usage)
 
-Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html),[Numpy](https://numpy.org/install/) 
+Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html) (required for , and [Numpy](https://numpy.org/install/) 
 
 ## Contributing
-Pull requests are welcome.  For significant changes, please open an issue first to discuss what you would like to change with respect to your particular branch.  This repo is also meant to be forked, allowing users to independently develop their own working environments. 
+This repo is meant to be forked, allowing users to independently develop their own working environments using the template files and following the examples provided.  Pull requests are welcome.  For significant changes, please open an issue first to discuss what you would like to change with respect to your particular issue.
