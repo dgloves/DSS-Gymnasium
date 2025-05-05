@@ -22,6 +22,8 @@ The RL environment class structure is constructed through Farma's open-source pa
 
 
 # Configuration
+Next, we outline a basic workstation configuration to get started.
+
 ## Virtual Environment
 We recommend users adopt an [Anaconda](https://www.anaconda.com/docs/getting-started/getting-started) distribution using Python ver. 3.10.13 (python 3.10+ applicable) to better manage development of the DSS-Gymnasium learning environment within a Conda virtual environment to allow for better package management and flexibility considering multiple projects.  Any common IDE (VSCode, PyCharm, etc.) which can run a Conda virtual environment should work just fine. 
 Once Anaconda has been installed, open your Anaconda cmd propt and create your new virtual environment using:
@@ -40,7 +42,7 @@ Upon environment activation, install the following open-source packages using pi
 * Pytorch: 2.3.0 (CPU or GPU) 
 * TensorFlow: 2.19.0 (CPU or GPU) (optional for Tensorboard usage)
 
-Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html) (required for , and [Numpy](https://numpy.org/install/) 
+Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html) (required for , and [Numpy](https://numpy.org/install/)  Once your virtual environment is activated and you have verified all necessary packages, view the "Basic_Procedure_ReadMe" to begin building your DSS-Gymnasium environment.
 
 ## Contributing
 This repo is meant to be forked, allowing users to independently develop their own working environments using the template files and following the examples provided.  Pull requests are welcome.  For significant changes, please open an issue first to discuss what you would like to change with respect to your particular issue.
