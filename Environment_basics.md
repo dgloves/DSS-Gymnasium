@@ -87,7 +87,7 @@ if __name__ == '__main__':
 
 
 ## Step 2: Building your DSS-Gymnasium Environment
-To construct the Gymnasium environment, this strategy follows the custom gymnasium environment protocol desribed [here](https://gymnasium.farama.org/introduction/create_custom_env/) by creating a subclass of the gym.Env class.  This unique structure allows for configuring the observation and action spaces for the agent, along with a reward function to reflect the optimization objective (with constraints), and "step" through an OpenDSS simulation, applying some specific control action by the agent onto the system or one of its components at each step followed by a load flow calculation.  In this manner, setting the Solution modes for OpenDSS for hourly or daily studies becomes directly intuitive in the RL framework.  
+To construct the Gymnasium environment, this strategy follows the custom gymnasium environment protocol desribed [here](https://gymnasium.farama.org/introduction/create_custom_env/) by creating a subclass of the gym.Env class.  This unique structure allows for configuring the observation and action spaces for the agent, along with a reward function to reflect the optimization objective (with constraints), and "step" through an OpenDSS simulation, applying some specific control action by the agent onto the system or one of its components at each step followed by a load flow calculation.  In this manner, setting the Solution modes for OpenDSS for hourly or daily studies becomes directly intuitive within the closed-loop RL framework.  
 
 First, create a new build_environment.py file which imports the build_circuit.py file from Step 1, along with the gymnsium spaces and OpenDSSDirect. 
 ```python
@@ -98,6 +98,35 @@ import opendssdirect as dss
 import build_circuit
 from build_circuit import globals  # globals from circuit
 ```
+
+Next, create your environment class
+```python
+class myAgent(gym.Env):
+```
+
+Set up your learning spaces from the Space superclass.  Choose the appropriate mathematical spaces to define your action(s) and observation(s).  For control over battery storage, for example, you may select a set of Discrete actions if you are only allowing the agent to either charge or discharge the battery.  However, if you are controlling the battery state-of-charge (SoC) or real/reactive power output setpoints, a continuous (Box) space is required.  The rule of thumb here is to maintain the per unit system within your environment and OpenDSS to keep the values of these vectors normalized and bounded to [-1,1]. For more complex spaces, typically for observed states, a Dict can be used to capture multple observations of various types at each step. 
+
+```python
+    def __init__(self):
+        super().__init__()
+        # add any other dss cmds
+        self.number_of_bess = len(dss.Storages.AllNames())
+
+        # actions are charging/discharging of BESS
+        self.action_space = Box(low=-1.0, high=1.0, shape=(self.number_of_BESS,), dtype=np.float64)
+
+        # observations of a cost function and BESS SoC
+        self.observation_space = Dict{'cost': Box(low=0.0, high=1.0, shape=(self.cost,), dtype=np.float64),
+                      'soc': Box(low=0.0, high=1.0, shape=(self.number_of_bess,), dtype=np.float64),
+                      'voltage': Box(low=0.9, high=1.1, shape=(self.num_bess,), dtype=np.float64)}
+```
+
+Next, create a reward function which represents your agent objective using a numerical reward.  This is typically defined by the user and is a direct reflection of the objective (cost) function, where the constraints are reflected as numerical penalites per degree of violation. 
+
+
+Finally,  create a step() and reset() function according to the gymansium protocol [here](https://gymnasium.farama.org/api/env/)
+
+
 
 
 
