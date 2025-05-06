@@ -42,7 +42,7 @@ Upon environment activation, install the following open-source packages using pi
 * Pytorch: 2.3.0 (CPU or GPU) 
 * TensorFlow: 2.19.0 (CPU or GPU) (optional for Tensorboard usage)
 
-Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html) (required for , and [Numpy](https://numpy.org/install/)  Once your virtual environment is activated and you have verified all necessary packages, view the [Environment Building Basics](./Environment_basics.md) file to begin constructing your DSS-Gymnasium environment.
+Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html) (required for OpenDSSDirect), and [Numpy](https://numpy.org/install/).  Once your virtual environment is activated and you have verified all necessary packages have been correctly installed, view the [Environment Building Basics](./Environment_basics.md) file to begin constructing your DSS-Gymnasium environment.
 
 ## Contributing
 This repo is meant to be forked, allowing users to independently develop their own working environments using the template files and following the examples provided.  Pull requests are welcome.  For significant changes, please open an issue first to discuss what you would like to change with respect to your particular issue.
