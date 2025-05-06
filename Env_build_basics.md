@@ -22,7 +22,11 @@ Adding a new 3phase PV System:
 New PVSystem.MyPV phases=3 conn=wye bus1=68 kV=4.8 kVA=100 irrad=1 Pmpp=95 temperature=25 PF=1 effcurve=Myeffcurve P-TCurve=MyPTcurve Daily=Myirradcurve TDaily=Mytempdata
 
 
+
+
 ![OpenDSS File](dss_example.png "OpenDSS File Add Load and PV System")
+
+
 
 
 2. 
