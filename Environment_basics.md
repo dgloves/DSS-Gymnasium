@@ -118,7 +118,7 @@ Set up your learning spaces from the Space superclass.  Choose the appropriate m
         # observations of a cost function and BESS SoC
         self.observation_space = Dict{'cost': Box(low=0.0, high=1.0, shape=(self.cost,), dtype=np.float64),
                       'soc': Box(low=0.0, high=1.0, shape=(self.number_of_bess,), dtype=np.float64),
-                      'voltage': Box(low=0.9, high=1.1, shape=(self.num_bess,), dtype=np.float64)}
+                      'voltage': Box(low=0.9, high=1.1, shape=(self.number_of_bess,), dtype=np.float64)}
 ```
 
 Next, create a reward function which represents your agent objective using a numerical reward.  This is typically defined by the user and is a direct reflection of the objective (cost) function, where the constraints are reflected as numerical penalites per degree of violation. A reward function may contain many terms depending on the problem structure.  For example, a simple voltage limit penalty-based reward might be:
