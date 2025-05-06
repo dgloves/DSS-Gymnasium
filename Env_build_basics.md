@@ -24,10 +24,8 @@ New PVSystem.MyPV phases=3 conn=wye bus1=68 kV=4.8 kVA=100 irrad=1 Pmpp=95 tempe
 
 
 
-![OpenDSS File](dss_example.png"OpenDSS File Add Load and PV System")
+![OpenDSS File](dss_example.png "OpenDSS File Add Load and PV System")
+*<small>image caption</small>*
 
 
 
-
-2. 
-3. 
