@@ -93,7 +93,7 @@ if __name__ == '__main__':
 ## Step 2: Building your DSS-Gymnasium Environment
 To construct the Gymnasium environment, this strategy follows the custom gymnasium environment protocol desribed [here](https://gymnasium.farama.org/introduction/create_custom_env/) by creating a subclass of the gym.Env class.  This unique structure allows for configuring the observation and action spaces for the agent, along with a reward function to reflect the optimization objective (with constraints), and "step" through an OpenDSS simulation, applying some specific control action by the agent onto the system or one of its components at each step followed by a load flow calculation.  In this manner, setting the Solution modes for OpenDSS for hourly or daily studies becomes directly intuitive within the closed-loop RL framework.  
 
-First, create a new build_environment.py file which imports the build_circuit.py file from Step 1, along with the gymnsium spaces and OpenDSSDirect. 
+First, create a new Python file which imports the build_circuit.py file from Step 1, along with the gymnsium library packages and OpenDSSDirect. See the template file build_environment.py.  
 ```python
 import gymnasium as gym
 from gymnasium.spaces import Discrete, Box, Dict  # gymnasium spaces
