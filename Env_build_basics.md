@@ -44,25 +44,30 @@ Import the desired circuit
 def loadcircuit()
     dss.Command('Clear all')
     dss.Command('Redirect "local_path/Master.dss"')
+    dss.Command('solve')  # get ss pflow 
 ```
 
-Add Monitors to Loads
+Check bus names in circuit
+```python
+print(dss.Circuit.AllBusNames())
+```
+
+Add Monitors to loads
 ```python
 def buildMonitors():
     for load in dss.Loads.AllNames():
-        run_command('New Monitor.' + load)
+        dss.Command('New Monitor.' + load)
         dss.Monitors.Element('Load.' + load)
         dss.Monitors.Terminal(1)  # phase a
         dss.Monitors.Mode(1)  # powers (all phases)
-        run_command('~ ppolar=no')
+        dss.Command('~ ppolar=no')
 ```
 
-OpenDSSDirect may be used to add any desired components to the circuit, as seen in the example files and build_circuit_template.py. 
+OpenDSSDirect may be used to add any desired components to the circuit, as seen in the example files using build_circuit_template.py. The complete set of submodules for OpenDSSDirect is available [here](https://dss-extensions.org/OpenDSSDirect.py/opendssdirect.html)
 
 Compile circuit 
 ```python
 def runcircuit():
-    my_pv_data = importPVData()
     loadcircuit()
     buildXYCurves()
     buildLoadshapes()
@@ -73,4 +78,5 @@ def runcircuit():
 if __name__ == '__main__':
     runcircuit()
 ```
-   
+
+
