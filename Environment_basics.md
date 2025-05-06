@@ -103,15 +103,11 @@ import build_circuit
 from build_circuit import globals  # globals from circuit build
 ```
 
-Next, create your environment class
+Next, create your environment class and set up your learning spaces from the Space superclass.  Choose the appropriate mathematical [spaces](https://gymnasium.farama.org/api/spaces/) to define your action(s) and observation(s).  For control over battery storage, for example, you may select a set of Discrete actions if you are only allowing the agent to either charge or discharge the battery (spaces.Discrete).  However, if you are controlling the battery state-of-charge (SoC) or real/reactive power output setpoints, for example, a continuous (spaces.Box) space is required.  The rule of thumb here is to maintain the per unit system within your environment and OpenDSS to keep the values of these vectors normalized and bounded to [-1,1]. For more complex spaces, a spaces.Dict can be used to capture multple observations of various types at each step.  **Please note that due to SB3 protocol some space vectors may require flattening to function properly.** 
+
 ```python
 class myAgent(gym.Env):
-```
-
-Set up your learning spaces from the Space superclass.  Choose the appropriate mathematical spaces to define your action(s) and observation(s).  For control over battery storage, for example, you may select a set of Discrete actions if you are only allowing the agent to either charge or discharge the battery.  However, if you are controlling the battery state-of-charge (SoC) or real/reactive power output setpoints, a continuous (Box) space is required.  The rule of thumb here is to maintain the per unit system within your environment and OpenDSS to keep the values of these vectors normalized and bounded to [-1,1]. For more complex spaces, typically for observed states, a Dict can be used to capture multple observations of various types at each step. 
-
-```python
-    def __init__(self):
+    def __init__(self, none):
         super().__init__()
         # add any other dss cmds
         self.number_of_bess = len(dss.Storages.AllNames())
@@ -125,9 +121,17 @@ Set up your learning spaces from the Space superclass.  Choose the appropriate m
                       'voltage': Box(low=0.9, high=1.1, shape=(self.number_of_bess,), dtype=np.float64)}
 ```
 
-Next, create a reward function which represents your agent objective using a numerical reward.  This is typically defined by the user and is a direct reflection of the objective (cost) function, where the constraints are reflected as numerical penalites per degree of violation. A reward function may contain many terms depending on the problem structure.  For example, a simple voltage limit penalty-based reward might be:
+Sample your learning spaces
 ```python
+print('my observation(s):', self.observation_space.sample())
+print('my action(s):', self.action_space.sample())
+```
 
+**It is also extremely helpful to add helper functions within your environment class after the __init__() function to access certain elements, apply actions, or perform simple tasks which may be required for observing states depending on how the user has defined the degree of agent observability** 
+
+Next, create a reward function which represents your agent objective using a numerical reward.  This is typically defined by the user and is a direct reflection of the objective (cost) function, where the constraints are reflected as numerical penalites per degree of violation. A reward function may contain many terms depending on the problem structure and generally takes some experimentation to get right.  The reward will be returned in the step() function after each new observation to the agent.  For example, a simple voltage limit penalty-based reward might be:
+
+```python
     def reward(self, voltages):
         """
         build reward function based on operational voltage limit violations:
@@ -147,12 +151,45 @@ Next, create a reward function which represents your agent objective using a num
         return reward
 ```
 
+Finally, create a step() and reset() function according to the gymansium protocol [here](https://gymnasium.farama.org/api/env/).  The step() function takes a control action sampled from the action space, so that the user may apply the action to the appropriate device(s) in the circuit.  This can be done using OpenDSSDirect to access any particulur element of interest.   After the action is applied, a power flow is computed based on the user's preference settings, and and observation of the resulting state spaces is returned with a reward.
 
-Finally,  create a step() and reset() function according to the gymansium protocol [here](https://gymnasium.farama.org/api/env/).  The step() function takes a control action sampled from the action space, so that the user may apply the action to the appropriate device(s) in the circuit.  This can be done using OpenDSSDirect to access any particulur element of interest.   After the action is applied, a power flow is computed based on the user's preference settings, and and observation of the resulting state spaces is returned with a reward.
+The step() function samples an action from the space distribution, applies the action, conducts a 3-phase unbalanced DSS load flow, observes the new state(s), computes a reward, and returns all information (including a boolean indicating the last step in the simulation has been reached).  This function directly coincides with a QSTS simulation in OpenDSS daily mode.  
 
 ```python
+    def step(self, action):
+        """
+        Apply agent actions, return obs, info, final step?, reward
+        """
+        # print('action:', action)
+        self.ApplyRLAgentActions(action)
+        self.Solution.Solve()  # dss load flow
 
+        # obtain new observed state variables after power flow (return new observation)
+        observation = self.Observations()
+        info = self.getAdditionalInfo()  # any additional info
+        reward = self.reward()  # custom reward function
+        return observation, reward, self.Terminated, False, info
 ```
+
+The reset() function resets your environment (DSS circuit) to its starting state for another episode, returning the initialized observation state and any additional information.
+
+```python
+    def reset(self, seed=None, options=None):
+        print('resetting DSS environment')
+        self.DSSFlatStart()
+        self.episode_starting_hour = self.DSSSolutionParams()
+        self.current_step = 1
+        observation = self.Observations()
+        info = self.getAdditionalInfo()
+        return observation, info
+```
+
+Although SB3 offers data logging capabilities when training an agent in your environment, you may wish to add additional data acquisition functions which are utilized within the step() function to capture:
+* Monitor or Energy Meter data
+* Reward(s), action(s), state(s) and/or observation(s), and step counts
+* Any additional data gathered in the environment useful to the user
+
+
 
 
 
