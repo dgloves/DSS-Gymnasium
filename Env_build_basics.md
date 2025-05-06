@@ -9,18 +9,23 @@ These circuits are commonly used amongst the power systems research community, a
  * Monitoring and metering infrastructure 
  * Additional circuit components (loads, generators, switches, etc.)
    
- Generally, this can be accomplished in two ways:
-1. Create a name.dss file by opening OpenDSS and following a similar structure as seen in the example files.  This name.dss can be called in the Master.dss file when compiling the circuit as seen in the provided benchmark test system file folders.  Other examples can be found [here]():
+Generally, this can be accomplished in two ways:
+1. Create a name.dss file by opening OpenDSS and following a similar structure as seen in the example files or [here]().  This name.dss can be called in the Master.dss file when compiling the circuit as seen in the provided benchmark test system file folders:
 
-'''text
-Adding a new single phase load 
+
+
+
+
+Adding a new single phase load:
+
 New Load.S19a Bus1=19.1 Phases=1 Conn=Wye Model=1 kV=2.4 kW=40.0  kvar=20.0
-'''
 
-'''text
-Adding a new 3phase PV System
-New PVSystem.MyPV phases=3 conn=wye bus1=68 kV=4.8 kVA=100 irrad=1 Pmpp=95 temperature=25 PF=1 effcurve=Myeffcurve P-TCurve=MyPTcurve Daily=Myirradcurve TDaily=Mytempdata'
-'''
+
+Adding a new 3phase PV System:
+
+New PVSystem.MyPV phases=3 conn=wye bus1=68 kV=4.8 kVA=100 irrad=1 Pmpp=95 temperature=25 PF=1 effcurve=Myeffcurve P-TCurve=MyPTcurve Daily=Myirradcurve TDaily=Mytempdata
+
+
 
 2. 
 3. 
