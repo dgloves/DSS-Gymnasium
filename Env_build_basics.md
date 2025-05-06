@@ -31,6 +31,16 @@ Generally, this can be accomplished in two ways:
 
 The Master.dss file then calls all other name.dss files and sets the circuit up for use.
 
-2. Using the OpenDSSDirect interface, create a .py file which performs similar operations
+2. Using the OpenDSSDirect interface, create a .py file which performs similar operations:
+   
+   '''python
+   from opendssdirect import dss
+   import pandas as pd
+   '''
+
+   Import the desired circuit
+   '''python
+   dss('Redirect "local_path/Master.dss"')
+   '''
  
    
