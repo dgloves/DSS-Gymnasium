@@ -32,15 +32,45 @@ Generally, this can be accomplished in two ways:
 The Master.dss file then calls all other name.dss files and sets the circuit up for use.
 
 2. Using the OpenDSSDirect interface, create a .py file which performs similar operations:
-   
-'''python
+
+Import packages
+```python
 from opendssdirect import dss
 import pandas as pd
-'''
+```
 
 Import the desired circuit
-'''python
-dss('Redirect "local_path/Master.dss"')
-'''
- 
+```python
+def loadcircuit()
+    dss.Command('Clear all')
+    dss.Command('Redirect "local_path/Master.dss"')
+```
+
+Add Monitors to Loads
+```python
+def buildMonitors():
+    for load in dss.Loads.AllNames():
+        run_command('New Monitor.' + load)
+        dss.Monitors.Element('Load.' + load)
+        dss.Monitors.Terminal(1)  # phase a
+        dss.Monitors.Mode(1)  # powers (all phases)
+        run_command('~ ppolar=no')
+```
+
+OpenDSSDirect may be used to add any desired components to the circuit, as seen in the example files and build_circuit_template.py. 
+
+Compile circuit 
+```python
+def runcircuit():
+    my_pv_data = importPVData()
+    loadcircuit()
+    buildXYCurves()
+    buildLoadshapes()
+    buildPVs()
+    buileStorage()
+    buildMonitors()
+
+if __name__ == '__main__':
+    runcircuit()
+```
    
