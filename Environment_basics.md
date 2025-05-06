@@ -121,7 +121,7 @@ Set up your learning spaces from the Space superclass.  Choose the appropriate m
                       'voltage': Box(low=0.9, high=1.1, shape=(self.num_bess,), dtype=np.float64)}
 ```
 
-Next, create a reward function which represents your agent objective using a numerical reward.  This is typically defined by the user and is a direct reflection of the objective (cost) function, where the constraints are reflected as numerical penalites per degree of violation. 
+Next, create a reward function which represents your agent objective using a numerical reward.  This is typically defined by the user and is a direct reflection of the objective (cost) function, where the constraints are reflected as numerical penalites per degree of violation. A reward function may contain many terms depending on the problem structure.  For example, a simple voltage limit penalty-based reward might be:
 ```python
 
     def reward(self, voltages):
@@ -139,12 +139,16 @@ Next, create a reward function which represents your agent objective using a num
                 v_reward.append(volt_reward)
             else:
                 pass
-        total_reward = sum(v_reward) 
-        return total_reward
+        reward = sum(v_reward) 
+        return reward
 ```
 
 
-Finally,  create a step() and reset() function according to the gymansium protocol [here](https://gymnasium.farama.org/api/env/)
+Finally,  create a step() and reset() function according to the gymansium protocol [here](https://gymnasium.farama.org/api/env/).  The step() function takes a control action sampled from the action space, so that the user may apply the action to the appropriate device(s) in the circuit.  This can be done using OpenDSSDirect to access any particulur element of interest.   After the action is applied, a power flow is computed based on the user's preference settings, and and observation of the resulting state spaces is returned with a reward.
+
+```python
+
+```
 
 
 
