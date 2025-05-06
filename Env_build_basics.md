@@ -13,12 +13,12 @@ These circuits are commonly used amongst the power systems research community, a
 Generally, this can be accomplished in two ways:
 1. Create a name.dss file by opening OpenDSS and following a similar structure as seen in the example files or in this [discussion](https://sourceforge.net/p/electricdss/discussion/).  This name.dss file can then be called in the Master.dss file when compiling the circuit as seen in the provided benchmark test system file folders:
  ---
- ###Add a new load:
+ Add a new load:
  ---
  New Load.S19a Bus1=19.1 Phases=1 Conn=Wye Model=1 kV=2.4 kW=40.0  kvar=20.0
  
  ---
- ###Add a new PV System:
+ Add a new PV System:
  ---
  New PVSystem.MyPV phases=3 conn=wye bus1=68 kV=4.8 kVA=100 irrad=1 Pmpp=95 temperature=25 PF=1 effcurve=Myeffcurve P-TCurve=MyPTcurve Daily=Myirradcurve TDaily=Mytempdata
 
@@ -29,10 +29,9 @@ Generally, this can be accomplished in two ways:
 ![DSS Example](dss_example.PNG "OpenDSS File Add Load and PV System to Circuit")
 
 
-
- ---
- Master DSS file call
- ---
+-----
+Master DSS file call
+-----
  
 2. Using the OpenDSSDirect interface, create a .py file which performs similar operations
  
