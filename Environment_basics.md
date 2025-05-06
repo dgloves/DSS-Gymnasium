@@ -122,6 +122,26 @@ Set up your learning spaces from the Space superclass.  Choose the appropriate m
 ```
 
 Next, create a reward function which represents your agent objective using a numerical reward.  This is typically defined by the user and is a direct reflection of the objective (cost) function, where the constraints are reflected as numerical penalites per degree of violation. 
+```python
+
+    def reward(self, voltages):
+        """
+        build reward function based on operational voltage limit violations:
+        --> voltage at bus within operational limits [0.95,1.05]pu = 0, else penalty
+        """
+        v_reward = []
+        for voltage in voltages:
+            if  0.95 <= voltage <= 1.05:
+                volt_reward = 0.0
+                v_reward.append(volt_reward)
+            else:
+                volt_reward = -1.0
+                v_reward.append(volt_reward)
+            else:
+                pass
+        total_reward = sum(v_reward) 
+        return total_reward
+```
 
 
 Finally,  create a step() and reset() function according to the gymansium protocol [here](https://gymnasium.farama.org/api/env/)
