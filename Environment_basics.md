@@ -2,7 +2,7 @@
 This section describes a three-step process for constructing a custion DSS-Gymnasium environment by constructing three Python files.  Please see the examples files for reference and the template files for copying to your own machine.  
 1. build_circuit.py - this file builds and compiles your OpenDSS distribution circuit
 2. build_environment.py - this file constructs a custom Gymnasium envionment class based on build_circuit.py
-3. train_agent.py - this file selects a DRL algorithm from SB3 and trains in your environment
+3. train_agent.py - this file selects a DRL algorithm from SB3 and trains/evaluates an RL agent in your environment
 
 ## Step 1: Building your OpenDSS Circuit
 The first step in constructing a gymnasium environment involves importing your own personal benchmark distribution circuit via OpenDSS on which the user intends to conduct a study. 
