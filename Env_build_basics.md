@@ -33,14 +33,14 @@ The Master.dss file then calls all other name.dss files and sets the circuit up 
 
 2. Using the OpenDSSDirect interface, create a .py file which performs similar operations:
    
-   '''python
-   from opendssdirect import dss
-   import pandas as pd
-   '''
+'''python
+from opendssdirect import dss
+import pandas as pd
+'''
 
-   Import the desired circuit
-   '''python
-   dss('Redirect "local_path/Master.dss"')
-   '''
+Import the desired circuit
+'''python
+dss('Redirect "local_path/Master.dss"')
+'''
  
    
