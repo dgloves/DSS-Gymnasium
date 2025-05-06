@@ -1,8 +1,12 @@
 # Gymnasium Environment Construction
+This section describes a three-step process for constructing a custion DSS-Gymnasium environment by constructing three Python files.  Please see the examples files for reference and the template files for copying to your own machine.  
+1. build_circuit.py - this file builds and compiles your OpenDSS distribution circuit
+2. build_environment.py - this file constructs a custom Gymnasium envionment class based on build_circuit.py
+3. train_agent.py - this file selects a DRL algorithm from SB3 and trains in your environment
 
 ## Step 1: Building your OpenDSS Circuit
 The first step in constructing a gymnasium environment involves importing your own personal benchmark distribution circuit via OpenDSS on which the user intends to conduct a study. 
-These circuits are commonly used amongst the power systems research community, and they provide a solid starting point for evaluating your RL algorithms in both a centralized (operator) and/or a decentralized (device) approach.  After downloading OpenDSS, the IEEE benchmark distribution files can usually be found in the "./local_download_path/OpenDSS/IEEETestCases" folder and we have included a few of these circuits in the main directory for convenience.  More importantly, these circuits are only baseline models, and depending on the study, users typically will want to add components, devices, etc. to the circuit to simulate a modern realistic distribution system, including:
+These circuits are commonly used amongst the power systems research community, and they provide a solid starting point for evaluating your RL algorithms in both a centralized (operator) and/or a decentralized/local (device) approach.  After downloading OpenDSS, the IEEE benchmark distribution files can usually be found in the "./local_download_path/OpenDSS/IEEETestCases" folder and we have included a few of these circuits in the main directory for convenience.  More importantly, these circuits are only baseline models, and depending on the study, users typically will want to add components, devices, etc. to the circuit to simulate a modern realistic distribution system, including:
  
  * Loads and Generators
  * Distributed Energy Resources (Solar PV Systems, Wind, Battery Energy Storage Systems) (with or without inverter objects)
@@ -32,7 +36,7 @@ OpenDSS editor example:
 
 The Master.dss file then calls all other name.dss files and sets the circuit up for use.
 
-2. Using the OpenDSSDirect interface, create a build_circuit.py file which performs similar operations to customize your circuit:
+2. Using the OpenDSSDirect interface, create a .py file which performs similar operations to customize your circuit.  For template usage see the template file build_circuit.py
 
 Import packages
 ```python
@@ -96,7 +100,7 @@ from gymnasium.spaces import Discrete, Box, Dict  # gymnasium spaces
 from gymnasium.spaces.utils import flatten_space
 import opendssdirect as dss
 import build_circuit
-from build_circuit import globals  # globals from circuit
+from build_circuit import globals  # globals from circuit build
 ```
 
 Next, create your environment class
