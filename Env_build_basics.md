@@ -31,7 +31,7 @@ Generally, this can be accomplished in two ways:
 
 The Master.dss file then calls all other name.dss files and sets the circuit up for use.
 
-2. Using the OpenDSSDirect interface, create a .py file which performs similar operations:
+2. Using the OpenDSSDirect interface, create a .py file which performs similar operations to customize your circuit:
 
 Import packages
 ```python
@@ -78,5 +78,9 @@ def runcircuit():
 if __name__ == '__main__':
     runcircuit()
 ```
+
+**Note**
+Although this step can be completed in the Gymnasium environment class (Step 2) we advise users to create a separate .py file to build the circuit as desired for a more efficient work flow.
+
 
 
