@@ -23,7 +23,11 @@ Generally, this can be accomplished in two ways:
  New PVSystem.MyPV phases=3 conn=wye bus1=68 kV=4.8 kVA=100 irrad=1 Pmpp=95 temperature=25 PF=1 effcurve=Myeffcurve P-TCurve=MyPTcurve Daily=Myirradcurve TDaily=Mytempdata
 
 OpenDSS editor example:
+
+
+
 ![DSS Example](dss_example.PNG "OpenDSS File Add Load and PV System to Circuit")
+
 
 
 The Master.dss file then calls all other name.dss files and sets the circuit up for use.
