@@ -29,10 +29,8 @@ Generally, this can be accomplished in two ways:
 ![DSS Example](dss_example.PNG "OpenDSS File Add Load and PV System to Circuit")
 
 
------
-Master DSS file call
------
- 
+The Master.dss file then calls all other name.dss files and sets the circuit up for use.
+
 2. Using the OpenDSSDirect interface, create a .py file which performs similar operations
  
    
