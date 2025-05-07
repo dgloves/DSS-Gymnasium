@@ -81,7 +81,7 @@ def runcircuit():
     buildXYCurves()
     buildLoadshapes()
     buildPVs()
-    buileStorage()
+    buildStorage()
     buildMonitors()
 
 if __name__ == '__main__':
