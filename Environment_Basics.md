@@ -1,5 +1,6 @@
 # Gymnasium Environment Construction
-This section describes a three-step process for constructing a custion DSS-Gymnasium environment by constructing three Python files.  Please see the examples files for reference and the template files for copying to your own machine.  
+This section describes a three-step process for constructing a custion DSS-Gymnasium environment by constructing a set of linked Python files.  Please see the examples files for reference and the template files for copying to your own machine.  
+
 1. build_circuit.py - this file builds and compiles your OpenDSS distribution circuit
 2. build_environment.py - this file constructs a custom Gymnasium envionment class based on build_circuit.py
 3. sb3_agent.py - this file selects a DRL algorithm from SB3 and trains/evaluates an RL agent in your environment
