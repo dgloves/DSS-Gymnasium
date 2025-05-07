@@ -44,7 +44,7 @@ Upon environment activation, install the following open-source packages using pi
 
 Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html) (required for OpenDSSDirect), and [Numpy](https://numpy.org/install/).  
 
-**Once your virtual environment is activated and you have verified all necessary packages have been correctly installed, view the [Environment Building Basics](./Environment_basics.md) file to begin constructing your DSS-Gymnasium environment.**
+**Once your virtual environment is activated and you have verified all necessary packages have been correctly installed, view the [Environment Building Basics](./Environment_Building_Basics.md) file to begin constructing your DSS-Gymnasium environment.**
 
 ## Contributing
 This repo is meant to be forked, allowing users to independently develop their own working environments using the template files and following the examples provided.  Pull requests are welcome.  For significant changes, please open an issue first to discuss what you would like to change with respect to your particular issue.
