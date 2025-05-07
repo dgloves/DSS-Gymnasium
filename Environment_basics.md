@@ -236,9 +236,16 @@ Save the model
 model.save(logger_path + r'\agent_a2c.zip')
 ```
 
-Keep in mind, the SB3 library contains a multitude of options and tools for customizing your training, and we advise all users spend adequate time navigating the SB3 [documentation](https://stable-baselines3.readthedocs.io/en/master/) prior to selecting an algorithm and beginning evaluation of an agent.
+Generally, a testing environment can be created in a similar fashion by following Steps 1 & 2 with different time series data, circuit configurations, etc.  After passing a successful environment check, evaluating the trained policy is as simple as:
+```python
+model = A2C.load(logger_path + r'\agent_a2c.zip')
+mean_reward, std_reward = evaluate_policy(model, testing_env, n_eval_episodes=num_testing_runs)
+print(f"mean_reward={mean_reward:.2f} +/- {std_reward}")
+```
 
-**The purpose of this repository is to provide an environment creation guide, and not to cover all aspects of OpenDSS, Gymnasium, and Stable-Baselines3. Thus, we encourage all users to spend time prior to training exploring and experimenting with all noted libraries and tools.
+Keep in mind, the SB3 library contains a multitude of options and tools for customizing your training and building custom deep learning frameworks over the [PyTorch](https://pytorch.org/get-started/locally/) framework, and we advise all users spend adequate time navigating the SB3 [documentation](https://stable-baselines3.readthedocs.io/en/master/) prior to selecting an algorithm and beginning experimenting with DRL.
+
+**The purpose of this repository is to provide an environment creation guide, and not to cover all aspects of OpenDSS, Gymnasium, and Stable-Baselines3. Thus, we encourage all users to spend time prior to utilizing these tools exploring and experimenting with all noted libraries and packages.**
 
 
 
