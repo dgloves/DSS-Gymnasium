@@ -146,8 +146,6 @@ Next, create a reward function which represents your agent objective using a num
             else:
                 volt_reward = -1.0
                 v_reward.append(volt_reward)
-            else:
-                pass
         reward = sum(v_reward) 
         return reward
 ```
