@@ -209,7 +209,7 @@ from stable_baselines3 import A2C
 
 ```python
 from stable_baselines3.common.env_checker import check_env
-check_env(gym_env, warn=True)  # print warnings
+check_env(myAgent, warn=True)  # print warnings
 ```
 
 To begin training, set the following parameters:
