@@ -2,7 +2,7 @@
 This section describes a three-step process for constructing a custion DSS-Gymnasium environment by constructing three Python files.  Please see the examples files for reference and the template files for copying to your own machine.  
 1. build_circuit.py - this file builds and compiles your OpenDSS distribution circuit
 2. build_environment.py - this file constructs a custom Gymnasium envionment class based on build_circuit.py
-3. train_agent.py - this file selects a DRL algorithm from SB3 and trains/evaluates an RL agent in your environment
+3. sb3_agent.py - this file selects a DRL algorithm from SB3 and trains/evaluates an RL agent in your environment
 
 ## Step 1: Building your OpenDSS Circuit
 The first step in constructing a gymnasium environment involves importing your own personal benchmark distribution circuit via OpenDSS on which the user intends to conduct a study. 
@@ -190,7 +190,7 @@ Although SB3 offers data logging capabilities when training an agent in your env
 * Any additional data gathered in the environment useful to the user
 
 ## Step 3: Train your RL Agent
-Once the environment is complete, a third Python file is created which imports the SB3 library and allows the user to select an [algorithm](https://stable-baselines3.readthedocs.io/en/master/guide/algos.html) based on the learning space configuration specified in the environment class.  See the template file train_agent.py and example files for further details on training and evaluation. 
+Once the environment is complete, a third Python file is created which imports the SB3 library and allows the user to select an [algorithm](https://stable-baselines3.readthedocs.io/en/master/guide/algos.html) based on the learning space configuration specified in the environment class.  See the template file sb3_agent.py, example files, and [documentation](https://stable-baselines3.readthedocs.io/en/master/guide/quickstart.html) for further details on training and evaluation. 
 
 Import your environment
 ```python
@@ -245,7 +245,7 @@ print(f"mean_reward={mean_reward:.2f} +/- {std_reward}")
 
 Keep in mind, the SB3 library contains a multitude of options and tools for customizing your training and building custom deep learning frameworks over the [PyTorch](https://pytorch.org/get-started/locally/) framework, and we advise all users spend adequate time navigating the SB3 [documentation](https://stable-baselines3.readthedocs.io/en/master/) prior to selecting an algorithm and beginning experimenting with DRL.
 
-**The purpose of this repository is to provide an environment creation guide, and not to cover all aspects of OpenDSS, Gymnasium, and Stable-Baselines3. Thus, we encourage all users to spend time prior to utilizing these tools exploring and experimenting with all noted libraries and packages.**
+**The purpose of this repository is to provide a DSS-Gymnasium environment creation guide, and not to cover all aspects of OpenDSS, Gymnasium, and Stable-Baselines3. Thus, we encourage all users to spend time prior to utilizing these tools exploring and experimenting with all noted libraries and packages.**
 
 
 
