@@ -189,9 +189,56 @@ Although SB3 offers data logging capabilities when training an agent in your env
 * Reward(s), action(s), state(s) and/or observation(s), and step counts
 * Any additional data gathered in the environment useful to the user
 
+## Step 3: Train your RL Agent
+Once the environment is complete, a third Python file is created which imports the SB3 library and allows the user to select an [algorithm](https://stable-baselines3.readthedocs.io/en/master/guide/algos.html) based on the learning space configuration specified in the environment class.  See the template file train_agent.py and example files for further details on training and evaluation. 
 
+Import your environment
+```python
+from build_environment import myAgent
+```
 
+Select the Advantage Actor-Critic (A2C) algorithm
+```python
+from stable_baselines3 import A2C
+```
 
+**Prior to training, it is always recommended to test your custom environment to verify that all Gymnasium class structure protocol have been met.  The environment checker will check the following:
+* learning space data type mismatch
+* learning space vectorization and flattening (multidimensional spaces)
+* step() function output
+* reset() function output
+
+```python
+from stable_baselines3.common.env_checker import check_env
+check_env(gym_env, warn=True)  # print warnings
+```
+
+To begin training, set the following parameters:
+* desired Gymnasium environment
+* discount parameter (gamma)
+* specific NN [policy](https://stable-baselines3.readthedocs.io/en/master/guide/custom_policy.html) & hyperparmeters (learning rate, num rollouts, init seeds, etc.)
+* the total number of steps = number steps in DSS simulation x number of desired episodes
+* data output path (logger, save model, etc.)
+* Tensorboard logger for automated real time SB3 plotting (see Tensorboard notes [here](https://stable-baselines3.readthedocs.io/en/master/guide/tensorboard.html) (optional)
+
+Set the model (agent) 
+```python
+model = A2C("MlpPolicy", env=myAgent, gamma=gamma, learning_rate=learning_rate, tensorboard_log=log_path, verbose=1)
+```
+
+Train the model
+```python
+model.learn(total_timesteps=total_steps, progress_bar=True, tb_log_name="training A2C")
+```
+
+Save the model
+```python
+model.save(logger_path + r'\agent_a2c.zip')
+```
+
+Keep in mind, the SB3 library contains a multitude of options and tools for customizing your training, and we advise all users spend adequate time navigating the SB3 [documentation](https://stable-baselines3.readthedocs.io/en/master/) prior to selecting an algorithm and beginning evaluation of an agent.
+
+**The purpose of this repository is to provide an environment creation guide, and not to cover all aspects of OpenDSS, Gymnasium, and Stable-Baselines3. Thus, we encourage all users to spend time prior to training exploring and experimenting with all noted libraries and tools.
 
 
 
