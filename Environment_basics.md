@@ -233,12 +233,12 @@ model.learn(total_timesteps=total_steps, progress_bar=True, tb_log_name="trainin
 
 Save the model
 ```python
-model.save(logger_path + r'\agent_a2c.zip')
+model.save(log_path + r'\agent_a2c.zip')
 ```
 
 Generally, a testing environment can be created in a similar fashion by following Steps 1 & 2 with different time series data, circuit configurations, etc.  After passing a successful environment check, evaluating the trained policy is as simple as:
 ```python
-model = A2C.load(logger_path + r'\agent_a2c.zip')
+model = A2C.load(log_path + r'\agent_a2c.zip')
 mean_reward, std_reward = evaluate_policy(model, testing_env, n_eval_episodes=num_testing_runs)
 print(f"mean_reward={mean_reward:.2f} +/- {std_reward}")
 ```
