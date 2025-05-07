@@ -101,7 +101,7 @@ from gymnasium.spaces import Discrete, Box, Dict  # gymnasium spaces
 from gymnasium.spaces.utils import flatten_space
 import opendssdirect as dss
 import build_circuit
-from build_circuit import globals  # globals from circuit build
+from build_circuit import *  # globals from circuit build
 ```
 
 Next, create your environment class and set up your learning spaces from the Space superclass.  Choose the appropriate mathematical [spaces](https://gymnasium.farama.org/api/spaces/) to define your action(s) and observation(s).  For control over battery storage, for example, you may select a set of Discrete actions if you are only allowing the agent to either charge or discharge the battery (spaces.Discrete).  However, if you are controlling the battery state-of-charge (SoC) or real/reactive power output setpoints, for example, a continuous (spaces.Box) space is required.  The rule of thumb here is to maintain the per unit system within your environment and OpenDSS to keep the values of these vectors normalized and bounded to [-1,1]. For more complex spaces, a spaces.Dict can be used to capture multple observations of various types at each step.  **Please note that due to SB3 protocol some space vectors may require flattening to function properly.** 
