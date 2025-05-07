@@ -117,9 +117,9 @@ class myAgent(gym.Env):
         self.action_space = Box(low=-1.0, high=1.0, shape=(self.number_of_BESS,), dtype=np.float64)
 
         # observations of a cost function and BESS SoC
-        self.observation_space = Dict{'cost': Box(low=0.0, high=1.0, shape=(self.cost,), dtype=np.float64),
+        self.observation_space = Dict({'cost': Box(low=0.0, high=1.0, shape=(self.cost,), dtype=np.float64),
                       'soc': Box(low=0.0, high=1.0, shape=(self.number_of_bess,), dtype=np.float64),
-                      'voltage': Box(low=0.9, high=1.1, shape=(self.number_of_bess,), dtype=np.float64)}
+                      'voltage': Box(low=0.9, high=1.1, shape=(self.number_of_bess,), dtype=np.float64)})
 ```
 
 Sample your learning spaces
