@@ -44,6 +44,9 @@ Upon environment activation, install the following open-source packages using pi
 
 Also, install up-to-date and/or compatible versions of the common Python packages: [matplotlib](https://matplotlib.org/stable/install/index.html), [SciPy](https://scipy.org/install/), [Pandas](https://pandas.pydata.org/docs/getting_started/install.html) (required for OpenDSSDirect), and [Numpy](https://numpy.org/install/).  
 
+Additionally, we include an optimization solver [Pyomo](https://www.pyomo.org/) as a part of the Anaconda virtual environment to allow users to compare RL performance against a traditional optimization solver. 
+
+If you do not wish to manually build your Anaconda virtual environment, you may upload the [Requirements.txt]() folder to create an environment which contains all of the above packages.  
 **Once your virtual environment is activated and you have verified all necessary packages have been correctly installed, view the [Environment Building Basics](./Environment_Building_Basics.md) file to begin constructing your DSS-Gymnasium environment.**
 
 ## Contributing
