@@ -1,6 +1,11 @@
 # Gymnasium Environment Construction
-This section describes a three-step process for constructing a custion DSS-Gymnasium environment by constructing a set of linked Python files.  Please see the examples files for reference and the template files for copying to your own machine.  
+This section describes a three-step process for constructing a custion DSS-Gymnasium environment by constructing a set of linked Python files.  Please see the examples files for reference and the template files for copying to your own machine. 
 
+Example Files:
+1. Local_PV_Q_Setpoint_Adj - contains IEEE 34 Bus OpenDSS system files with loadshape and PV profile data from the [NSRDB](https://nsrdb.nrel.gov/) and follows Steps 1-3 to train a single DQN agent on local PV system reactive power setpoint adjustments for voltage regulation.
+2. Emergency_Restoration_Rdm_Fault_Training - contains IEEE 123 Bus OpenDSS system files and custom DSS files (Step 1.1) for centralized DQN agent performing emergency grid post-fault restoration by manipulating network topology switches.  
+
+Template Files (copy to local machine):
 1. build_circuit.py - this file builds and compiles your OpenDSS distribution circuit
 2. build_environment.py - this file constructs a custom Gymnasium envionment class based on build_circuit.py
 3. sb3_agent.py - this file selects a DRL algorithm from SB3 and trains/evaluates an RL agent in your environment
