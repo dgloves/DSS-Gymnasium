@@ -30,6 +30,6 @@ new_logger.close()
 #%%
 # save trained model
 print('saving trained agent')
-model.save(log_path + r'/sac.zip')
+model.save(log_path + r'/dqn_agent.zip')
 print('model saved in local path, enjoy trained agent!')
 
