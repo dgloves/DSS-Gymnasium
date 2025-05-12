@@ -29,7 +29,7 @@ Markdown==3.7
 markdown-it-py==3.0.0
 matplotlib==3.8.3
 mdurl==0.1.2
-mkl-service==2.4.0
+mkl-service==2.4.1
 ml_dtypes==0.5.1
 namex==0.0.8
 numpy==1.26.2
