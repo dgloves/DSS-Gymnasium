@@ -10,8 +10,8 @@ from opendssdirect import dss
 import os
 
 # data_path = os.getcwd()  # local dir
-dss_path = r'C:\Users\dglov\OneDrive\Desktop\OpenDSS\123Bus\IEEE123Master.dss'
-data_path = r'C:\Users\dglov\OneDrive\Desktop\OpenDSS\123Bus'
+dss_path = r'https://github.com/dgloves/DSS_Gymnasium/blob/main/123Bus/IEEE123Master.dss'
+data_path = r'https://github.com/dgloves/DSS_Gymnasium/blob/main/123Bus'
 
 num_steps = 8640  # 30 days
 step_size = 5  # 5 min
@@ -20,7 +20,7 @@ num_pvs = 1
 
 def load123bus():
     dss.Command('ClearAll')
-    dss.Command("Redirect 'C:\\Users\\dglov\\OneDrive\\Desktop\\OpenDSS\\123Bus\\IEEE123Master.dss'")
+    dss.Command("Redirect 'https://github.com/dgloves/DSS_Gymnasium/blob/main/123Bus/IEEE123Master.dss'")
     dss.Command('Set Loadmult=1.25')  # set load multiplier at 125%
     dss.Loads.Status(3)  # response to load mult = variable
     dss.Command('set ControlMode=OFF')  # disable voltage regulators, cap banks
