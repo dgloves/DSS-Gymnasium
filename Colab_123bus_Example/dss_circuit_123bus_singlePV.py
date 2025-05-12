@@ -9,6 +9,7 @@ import numpy as np
 from opendssdirect import dss
 import os
 
+"""EDIT PATHS FOR DSS LOCALLY"""
 # data_path = os.getcwd()  # local dir
 dss_path = r'https://github.com/dgloves/DSS_Gymnasium/blob/main/123Bus/IEEE123Master.dss'
 data_path = r'https://github.com/dgloves/DSS_Gymnasium/blob/main/123Bus'
