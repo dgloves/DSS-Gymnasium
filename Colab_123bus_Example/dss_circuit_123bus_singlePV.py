@@ -176,6 +176,3 @@ def run123busCircuit():
 if __name__ == '__main__':
     run123busCircuit()
 
-# pvs = dss.utils.pvsystems_to_dataframe()  # convert to DataFrame
-# print('My PV Systems:', dss.PVsystems.AllNames())
-# print('Circuit bus Names:', dss.Circuit.AllBusNames())
