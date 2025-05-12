@@ -46,7 +46,7 @@ Also, install up-to-date and/or compatible versions of the common Python package
 
 Additionally, we include an optimization solver [Pyomo](https://www.pyomo.org/) as a part of the Anaconda virtual environment to allow users to compare RL performance against a traditional optimization solver. 
 
-If you do not wish to manually build your Anaconda virtual environment, you may upload the [Requirements.txt](https://github.com/dgloves/DSS_Gymnasium/blob/main/requirements.txt) file or the [dss_gymnasium.yml](https://github.com/dgloves/DSS_Gymnasium/blob/main/dss_gymnasium.yml) to create an environment which contains all of the above packages. 
+If you do not wish to manually build your Anaconda virtual environment, you may upload the [requirements.txt](https://github.com/dgloves/DSS_Gymnasium/blob/main/requirements.txt) file or the [dss_gymnasium.yml](https://github.com/dgloves/DSS_Gymnasium/blob/main/dss_gymnasium.yml) to create an environment which contains all of the above packages. 
 
 **Once your virtual environment is activated and you have verified all necessary packages have been correctly installed, view the [Environment Building Basics](./Environment_Building_Basics.md) file to begin constructing your DSS-Gymnasium environment.**
 
