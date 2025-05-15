@@ -236,6 +236,14 @@ Train the model
 model.learn(total_timesteps=total_steps, progress_bar=True, tb_log_name="training A2C")
 ```
 
+**Tensorboard Notes**
+Considering the amount of time required to train a DRL agent based on the optimization problem at hand and the number of steps/episodes configured by the user, a Tensorboard (TB) log is highly recommended for fast, real-time viewing of training metrics (i.e. reward, policy variance, loss, etc.)  To access the TB logs during or after training, follow these basic steps:
+1. Open the Anaconda Cmd Prompt and activate your DSS-Gymnasium environment (defaults to base env)
+2. cd /to/your/log/folder specified
+3. type the following:  tensorboard --logdir <insert full path to log folder from step 2> and ctrl + click on link
+
+
+
 Save the model
 ```python
 model.save(log_path + r'\agent_a2c.zip')
