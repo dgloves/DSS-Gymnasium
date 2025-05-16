@@ -258,7 +258,7 @@ View Mean Reward:
 
 
 
-Save the model
+Save the trained model
 ```python
 model.save(log_path + r'\agent_a2c.zip')
 ```
