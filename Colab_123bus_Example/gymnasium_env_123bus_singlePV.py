@@ -1,7 +1,6 @@
 """
-D. Glover  Google Colab - Single PV agent IEEE 123bus local PV System voltage deviation minimization
-build gymnasium environment class to run dss circuit 'dss_circuit_123bus_singlePV.py'
-
+Single PV agent IEEE 123bus local PV System voltage deviation minimization
+Build gymnasium environment class to run dss circuit 'dss_circuit_123bus_singlePV.py'
 """
 
 import dss_circuit_123bus_singlePV
