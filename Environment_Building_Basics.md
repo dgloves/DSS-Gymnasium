@@ -237,10 +237,10 @@ model.learn(total_timesteps=total_steps, progress_bar=True, tb_log_name="trainin
 ```
 
 **Tensorboard Notes**
-Considering the amount of time required to train a DRL agent based on the optimization problem at hand and the number of steps/episodes configured by the user, a Tensorboard (TB) log is highly recommended for fast, real-time viewing of training metrics (i.e. reward, policy variance, loss, etc.)  To access the TB logs during or after training, follow these basic steps:
-1. Open the Anaconda Cmd Prompt and activate your DSS-Gymnasium environment (defaults to base env)
-2. cd /to/your/log/folder specified
-3. type the following:  tensorboard --logdir <insert full path to log folder from step 2> and ctrl + click on link to view training metrics:
+Considering the amount of time required to train a DRL agent based on the optimization problem at hand and the number of steps/episodes configured by the user, a Tensorboard (TB) log is highly recommended for fast, real-time viewing of training metrics (i.e. reward, policy variance, loss, etc.).  To access the TB logs during or after training, follow these basic steps:
+1. Open the Anaconda Cmd Prompt and activate your DSS-Gymnasium environment name (defaults to base env)
+2. cd ./to/your/log/folder specified in Step 3
+3. point the TB logger to the log file location:  tensorboard --logdir <insert full path to log folder from step 2> and ctrl + click on link to view training metrics:
 
 View Policy Loss:
 
