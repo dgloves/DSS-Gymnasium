@@ -1,6 +1,5 @@
 """
-openDSSDirect circuit import
-ieee 123bus test system with single PV system
+openDSSDirect circuit import IEEE 123bus test system with single PV system
 local voltage deviation minimization via reactive power set point control (no QV-droop)
 """
 
