@@ -22,7 +22,7 @@ The RL environment class structure is constructed through Farma's open-source pa
 
 
 # Configuration
-Next, we outline a basic workstation configuration to get started.
+Next, we outline a basic workstation configuration to get started.  If you already have a working environment containing the following packages, or wish to skip directly to building your own DSS-Gymnasium environment, see the instructional [Environment Building Basics](./Environment_Building_Basics.md).
 
 ## Virtual Environment
 We recommend users adopt an [Anaconda](https://www.anaconda.com/docs/getting-started/getting-started) distribution using Python ver. 3.10.13 (python 3.10+ applicable) to better manage development of the DSS-Gymnasium learning environment within a Conda virtual environment to allow for better package management and flexibility considering multiple projects.  Any common IDE (VSCode, PyCharm, etc.) which can run a Conda virtual environment should work just fine. 
