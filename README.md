@@ -50,5 +50,7 @@ If you do not wish to manually build your Anaconda virtual environment, you may 
 
 **Once your virtual environment is activated and you have verified all necessary packages have been correctly installed, view the [Environment Building Basics](./Environment_Building_Basics.md) file to begin constructing your DSS-Gymnasium environment.**
 
+**Currently, we are working on additional environmental upgrades, including usage of control with Battery Energy Storage Systems (BESS) and Smart Buildings.  In addition, we are planning to add workarounds for SB3's single agent limitations for multi-agent applications (MADRL).  STAY TUNED!!**
+
 ## Contributing
 This repo is meant to be forked, allowing users to independently develop their own working environments using the template files and following the examples provided.  Pull requests are welcome.  For significant changes, please open an issue first to discuss what you would like to change with respect to your particular issue.  We are continuing to add more use cases and expand this work.
