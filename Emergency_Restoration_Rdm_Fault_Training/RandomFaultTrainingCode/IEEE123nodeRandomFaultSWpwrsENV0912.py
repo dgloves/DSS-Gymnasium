@@ -43,7 +43,7 @@ class rlEnv(gym.Env):
     # initialize training environment
     def __init__(self, SwitchOpenNoList):
         "SwtichOpenNo is a list  of switches to open due to fault"
-        self.case_path = r'/home/hongda.ren/IEEE123/IEEE123MasterMultiSW.dss' # Input DSS case
+        self.case_path = r'/home/IEEE123/IEEE123MasterMultiSW.dss' # Input DSS case, Change to your local folder path
         # initialize OpenDSS
         # self.dssObj = win32com.client.Dispatch("OpenDSSEngine.DSS")
         # self.dssText = self.dssObj.Text
