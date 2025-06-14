@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jan  8 15:48:24 2021
+Created on Fri Jan  8 15:48:24 2021 Reference
 https://github.com/araffin/rl-tutorial-jnrr19/blob/sb3/4_callbacks_hyperparameter_tuning.ipynb
 @author: Hongda
 """
@@ -108,7 +108,7 @@ def linear_schedule(initial_value: float) -> Callable[[float], float]:
 
 # Create log dir
 # log_dir = r"/home/hongda.ren/IEEE123/FixTraining/LR0.001NN64" #Change for cases
-log_dir = r"/home/hongda.ren/IEEE123/RadomFaultTraining/LR0.00NN6464record" 
+log_dir = r"/home/hongda.ren/IEEE123/RadomFaultTraining/LR0.00NN6464record" #Change to your local folder path
 os.makedirs(log_dir, exist_ok=True)
 
 # Create and wrap the environment
