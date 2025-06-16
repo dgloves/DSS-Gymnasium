@@ -48,6 +48,7 @@ Additionally, we include an optimization solver [Pyomo](https://www.pyomo.org/) 
 
 If you do not wish to manually build your Anaconda virtual environment, you may upload the [requirements.txt](https://github.com/dgloves/DSS_Gymnasium/blob/main/requirements.txt) file or the [dss_gymnasium.yml](https://github.com/dgloves/DSS_Gymnasium/blob/main/dss_gymnasium.yml) to create an environment which contains all of the above packages. 
 
+## Building Your Custom DSS-Gymnasium Learning Environment
 **Once your virtual environment is activated and you have verified all necessary packages have been correctly installed, view the [Environment Building Basics](./Environment_Building_Basics.md) file to begin constructing your DSS-Gymnasium environment.**
 
 **Currently, we are working on additional environmental upgrades, including usage of control with Battery Energy Storage Systems (BESS) and Smart Buildings.  In addition, we are planning to add workarounds for SB3's single agent limitations for multi-agent applications (MADRL).  STAY TUNED!!**
