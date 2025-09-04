@@ -14,6 +14,8 @@ This tutorial is built on ongoing research in power distribution systems at Wash
 
 ## Citation (BibTeX)
     ---
+    [@11145317],
+
     bibliography: references.bib
     ---
 
