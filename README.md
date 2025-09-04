@@ -12,6 +12,19 @@ This tutorial is built on ongoing research in power distribution systems at Wash
 
 <b>D. Glover</b>, G. Krishnamoorthy, H. Ren, A. Dubey and A. Gebremedhin, "Deep Reinforcement Learning for Distribution System Operations: A Tutorial and Survey," in Proceedings of the IEEE, doi: 10.1109/JPROC.2025.3599840..
 
+## Citation (BibTeX)
+@ARTICLE{11145317,
+  author={Glover, Daniel and Krishnamoorthy, Gayathri and Ren, Hongda and Dubey, Anamika and Gebremedhin, Assefaw},
+  journal={Proceedings of the IEEE}, 
+  title={Deep Reinforcement Learning for Distribution System Operations: A Tutorial and Survey}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-29},
+  keywords={Optimization;Power systems;Tutorials;Deep reinforcement learning;Uncertainty;Reviews;Systems operation;Surveys;Markov decision processes;Distributed power generation;Deep reinforcement learning (DRL);grid services;Markov decision process (MDP);optimization;power distribution systems},
+  doi={10.1109/JPROC.2025.3599840}}
+
+  
 ## Toolkit Construction
 The foundational framework utilizes OpenDSS, an open-source electric power distribution system simulator distributed by the Electric Power Research Institute [EPRI](https://sourceforge.net/p/electricdss/),
 with the [Python](https://www.python.org/) programming language by way of [OpenDSSDirect](https://dss-extensions.org/OpenDSSDirect.py/#) and [DSS-Python](https://dss-extensions.org/DSS-Python/). OpenDSSDirect.py is a cross-platform Python package which
