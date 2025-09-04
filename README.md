@@ -13,7 +13,7 @@ This tutorial is built on ongoing research in power distribution systems at Wash
 <b>D. Glover</b>, G. Krishnamoorthy, H. Ren, A. Dubey and A. Gebremedhin, "Deep Reinforcement Learning for Distribution System Operations: A Tutorial and Survey," in Proceedings of the IEEE, doi: 10.1109/JPROC.2025.3599840..
 
 ## Citation (BibTeX)
-@ARTICLE{11145317, /
+@ARTICLE{11145317, <br>
   author={Glover, Daniel and Krishnamoorthy, Gayathri and Ren, Hongda and Dubey, Anamika and Gebremedhin, Assefaw},  
   journal={Proceedings of the IEEE},   
   title={Deep Reinforcement Learning for Distribution System Operations: A Tutorial and Survey},   
