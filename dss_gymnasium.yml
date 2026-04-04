@@ -1,4 +1,4 @@
-name: mtpmpc_environment
+name: dss_gymnasium
 channels:
   - conda-forge
   - pytorch
@@ -153,4 +153,4 @@ dependencies:
       - tqdm==4.66.5
       - werkzeug==3.0.4
       - wrapt==1.17.2
-prefix: C:\Users\dglov\anaconda3\envs\mtpmpc_environment
+prefix: C:\Users\dglov\anaconda3\envs\dss_gymnasium
